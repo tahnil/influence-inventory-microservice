@@ -13,6 +13,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Setup for running behind a proxy
+app.set('trust proxy', true);
+
 // Enable CORS for Google Sheets
 app.use(cors());
 
