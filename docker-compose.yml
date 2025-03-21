@@ -1,0 +1,14 @@
+version: '3.8'
+volumes:
+  project_data:
+services:
+  api:
+    build: .
+    ports:
+      - "3009:3000"
+    volumes:
+      - project_data:/app/data
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
